@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,14 @@
 		D84E4BB625FEFB2B00609DCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84E4BB425FEFB2B00609DCF /* LaunchScreen.storyboard */; };
 		D84E4BC125FEFB2B00609DCF /* Marval_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BC025FEFB2B00609DCF /* Marval_APITests.swift */; };
 		D84E4BCC25FEFB2B00609DCF /* Marval_APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BCB25FEFB2B00609DCF /* Marval_APIUITests.swift */; };
+		D84E4BDE25FEFC1000609DCF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D84E4BDD25FEFC1000609DCF /* SDWebImageSwiftUI */; };
+		D84E4BE325FF00D600609DCF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BE225FF00D600609DCF /* Credentials.swift */; };
+		D84E4BEC25FF019700609DCF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BEB25FF019700609DCF /* Home.swift */; };
+		D84E4BF425FF02E300609DCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BF325FF02E300609DCF /* HomeViewModel.swift */; };
+		D84E4BF925FF036E00609DCF /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BF825FF036E00609DCF /* CharactersView.swift */; };
+		D84E4BFE25FF0AEF00609DCF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4BFD25FF0AEF00609DCF /* Character.swift */; };
+		D84E4C0325FF18E400609DCF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4C0225FF18E400609DCF /* WebView.swift */; };
+		D84E4C0825FF1C8D00609DCF /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E4C0725FF1C8D00609DCF /* Comic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,13 @@
 		D84E4BC725FEFB2B00609DCF /* Marval APIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marval APIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84E4BCB25FEFB2B00609DCF /* Marval_APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marval_APIUITests.swift; sourceTree = "<group>"; };
 		D84E4BCD25FEFB2B00609DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D84E4BE225FF00D600609DCF /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		D84E4BEB25FF019700609DCF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D84E4BF325FF02E300609DCF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D84E4BF825FF036E00609DCF /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		D84E4BFD25FF0AEF00609DCF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D84E4C0225FF18E400609DCF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D84E4C0725FF1C8D00609DCF /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84E4BDE25FEFC1000609DCF /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +115,9 @@
 		D84E4BA825FEFB2A00609DCF /* Marval API */ = {
 			isa = PBXGroup;
 			children = (
+				D84E4BEA25FF017B00609DCF /* ViewModel */,
+				D84E4BE925FF016900609DCF /* Model */,
+				D84E4BE725FF014B00609DCF /* View */,
 				D84E4BA925FEFB2A00609DCF /* AppDelegate.swift */,
 				D84E4BAB25FEFB2A00609DCF /* SceneDelegate.swift */,
 				D84E4BAD25FEFB2A00609DCF /* ContentView.swift */,
@@ -106,6 +125,7 @@
 				D84E4BB425FEFB2B00609DCF /* LaunchScreen.storyboard */,
 				D84E4BB725FEFB2B00609DCF /* Info.plist */,
 				D84E4BB125FEFB2B00609DCF /* Preview Content */,
+				D84E4BE225FF00D600609DCF /* Credentials.swift */,
 			);
 			path = "Marval API";
 			sourceTree = "<group>";
@@ -136,6 +156,33 @@
 			path = "Marval APIUITests";
 			sourceTree = "<group>";
 		};
+		D84E4BE725FF014B00609DCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D84E4BEB25FF019700609DCF /* Home.swift */,
+				D84E4BF825FF036E00609DCF /* CharactersView.swift */,
+				D84E4C0225FF18E400609DCF /* WebView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D84E4BE925FF016900609DCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D84E4BFD25FF0AEF00609DCF /* Character.swift */,
+				D84E4C0725FF1C8D00609DCF /* Comic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D84E4BEA25FF017B00609DCF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D84E4BF325FF02E300609DCF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +199,9 @@
 			dependencies = (
 			);
 			name = "Marval API";
+			packageProductDependencies = (
+				D84E4BDD25FEFC1000609DCF /* SDWebImageSwiftUI */,
+			);
 			productName = "Marval API";
 			productReference = D84E4BA625FEFB2A00609DCF /* Marval API.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +273,9 @@
 				Base,
 			);
 			mainGroup = D84E4B9D25FEFB2A00609DCF;
+			packageReferences = (
+				D84E4BDC25FEFC1000609DCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = D84E4BA725FEFB2A00609DCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,8 +320,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84E4BAA25FEFB2A00609DCF /* AppDelegate.swift in Sources */,
+				D84E4BF425FF02E300609DCF /* HomeViewModel.swift in Sources */,
 				D84E4BAC25FEFB2A00609DCF /* SceneDelegate.swift in Sources */,
+				D84E4BEC25FF019700609DCF /* Home.swift in Sources */,
+				D84E4BE325FF00D600609DCF /* Credentials.swift in Sources */,
+				D84E4BF925FF036E00609DCF /* CharactersView.swift in Sources */,
+				D84E4C0325FF18E400609DCF /* WebView.swift in Sources */,
+				D84E4C0825FF1C8D00609DCF /* Comic.swift in Sources */,
 				D84E4BAE25FEFB2A00609DCF /* ContentView.swift in Sources */,
+				D84E4BFE25FF0AEF00609DCF /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +651,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D84E4BDC25FEFC1000609DCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D84E4BDD25FEFC1000609DCF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D84E4BDC25FEFC1000609DCF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D84E4B9E25FEFB2A00609DCF /* Project object */;
 }
