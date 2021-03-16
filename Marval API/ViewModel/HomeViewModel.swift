@@ -15,9 +15,16 @@ class HomeViewModel: ObservableObject {
     @Published var fectchedComics: [Comic] = []
     @Published var offset: Int = 0
     init() {
-        searchCancellable = $searchQuery.removeDuplicates().debounce(for: 0.6, scheduler: RunLoop.main).sink(receiveValue: {str in
-                                                                                                                if str == ""{self.fectchedCharacters = nil}else
-            {self.searchCharacter()}})
+        searchCancellable = $searchQuery
+            .removeDuplicates()
+            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .sink(receiveValue: { str in
+                if str == "" {
+                    self.fectchedCharacters = nil
+                }
+                else {
+                    self.searchCharacter()
+                }})
     }
     func searchCharacter() {
         let ts = String(Date().timeIntervalSince1970)
@@ -71,7 +78,7 @@ class HomeViewModel: ObservableObject {
             do{
                 let characters = try JSONDecoder().decode(APIComicResult.self, from: APIData)
                 DispatchQueue.main.sync {
-                }
+                              }
             }
             catch
             {

@@ -12,10 +12,8 @@ struct CharactersView: View {
     var body: some View {
         NavigationView{
             ScrollView(.vertical,showsIndicators: false,content:{
-                VStack(spacing:15 )
-                {
-                    HStack(spacing:10)
-                    {
+                VStack(spacing:15 ) {
+                    HStack(spacing:10) {
                         Image(systemName: "magnifyingglass").foregroundColor(.gray)
                         TextField("Search Character", text: $homeData.searchQuery).autocapitalization(.none).disableAutocorrection(true)
                     }.padding(.vertical,10)
@@ -24,24 +22,39 @@ struct CharactersView: View {
                     .shadow(color: Color.black.opacity(0.06), radius: 5, x: 5, y: 5)
                     .shadow(color: Color.black.opacity(0.06), radius: 5, x: -5, y: -5)
                 }.padding()
-                if let characters = homeData.fectchedCharacters{
-                    if characters.isEmpty{
+                if let characters = homeData.fectchedCharacters {
+                    if characters.isEmpty {
                         Text("No Results Found").padding(.top,20)
                     }
-                    else
-                    {
-                        ForEach(characters)
-                        {
-                            data in
+                    else {
+                        ForEach(characters) { data in
                             CharacterRowView(character: data)
+                            if homeData.offset == homeData.fectchedCharacters?.count {
+                                ProgressView().padding(.vertical).onAppear(perform: {
+                                    print("fetching new data ... ")
+                                })
+                            }
+                            else {
+                                GeometryReader{
+                                    reader -> Color in
+                                    let minY = reader.frame(in: .global).minY
+                                    let height = UIScreen.main.bounds.height / 1.3
+                                    if minY > height {
+                                        print("last")
+                                        homeData.offset == homeData.fectchedCharacters?.count
+                                    }
+                                    return Color.clear
+                                }
+
+                            }
                         }
                     }
                 }
-                else
-                {
-                    if homeData.searchQuery != ""{
+                else {
+                    if homeData.searchQuery != "" {
                         ProgressView().padding(.top,20)
                     }
+                    
                 }
             }).navigationTitle("Marvel")
         }
